@@ -1,0 +1,132 @@
+Function,Migration Support,Diagnostic Message
+abs,YES,
+activemask,NO,
+add,YES, Partial
+addc,NO,
+alloca,NO,
+and,YES,
+applypriority,NO,
+atom,YES, Partial
+bar,YES, Partial
+barrier,NO,
+bfe,YES,
+bfi,YES,
+bfind,NO,
+bmsk,NO,
+bra,NO,
+brev,YES,
+brkpt,YES,
+brx,NO,
+call,NO,
+clz,YES,
+cnot,YES,
+copysign,YES,
+cos,YES,
+cp,YES, Partial
+createpolicy,NO,
+cvt,YES, Partial
+cvta,NO,
+discard,NO,
+div,YES, Partial
+dp2a,YES,
+dp4a,YES,
+elect,NO,
+ex2,YES,
+exit,NO,
+fence,YES, Partial
+fma,YES, Partial
+fns,NO,
+getctarank,NO,
+griddepcontrol,NO,
+isspacep,NO,
+istypep,NO,
+ld,YES, Partial
+ldmatrix,YES, Partial
+ldu,NO,
+lg2,YES,
+lop3,YES,
+mad,YES, Partial
+mad24,YES, Partial
+madc,NO,
+mapa,NO,
+match,NO,
+max,YES,
+mbarrier,NO,
+membar,YES, Partial
+min,YES,
+mma,YES, Partial
+mov,YES,
+movmatrix,NO,
+mul,YES, Partial
+mul24,YES, Partial
+multimem,NO,
+nanosleep,NO,
+neg,YES,
+not,YES,
+or,YES,
+pmevent,NO,
+popc,YES,
+prefetch,YES, Partial
+prmt,YES,
+rcp,YES,
+red,YES, Partial
+redux,NO,
+rem,YES,
+ret,YES,
+rsqrt,YES,
+sad,YES,
+selp,YES,
+set,NO,
+setmaxnreg,NO,
+setp,YES,
+shf,NO,
+shfl,YES,
+shl,YES,
+shr,YES,
+sin,YES,
+slct,YES, Partial
+sqrt,YES,
+st,YES, Partial
+stackrestore,NO,
+stacksave,NO,
+stmatrix,YES, Partial
+sub,YES, Partial
+subc,NO,
+suld,NO,
+suq,NO,
+sured,NO,
+sust,NO,
+szext,NO,
+tanh,YES,
+testp,YES,
+tex,NO,
+tld4,NO,
+trap,NO,
+txq,NO,
+vabsdiff,YES, Partial
+vabsdiff2,YES, Partial
+vabsdiff4,YES, Partial
+vadd,YES, Partial
+vadd2,YES, Partial
+vadd4,YES, Partial
+vavrg2,YES, Partial
+vavrg4,YES, Partial
+vmad,NO,
+vmax,YES, Partial
+vmax2,YES, Partial
+vmax4,YES, Partial
+vmin,YES, Partial
+vmin2,YES, Partial
+vmin4,YES, Partial
+vote,NO,
+vset,YES, Partial
+vset2,YES, Partial
+vset4,YES, Partial
+vshl,YES, Partial
+vshr,YES, Partial
+vsub,YES, Partial
+vsub2,YES, Partial
+vsub4,YES, Partial
+wgmma,NO,
+wmma,NO,
+xor,YES, Partial

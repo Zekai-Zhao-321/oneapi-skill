@@ -1,0 +1,12 @@
+> Starting with the oneAPI 2025.2 release, oneDPL Code Samples that were originally hosted in the [oneAPI-samples](https://github.com/oneapi-src/oneAPI-samples) repository will now be maintained in the [uxlfoundation/oneDPL](https://github.com/uxlfoundation/oneDPL) repository. The links below have been updated to reflect this change.
+
+# Intel® oneAPI DPC++ Library (oneDPL) Code Samples
+
+| Code Sample Name                                                                                    | Supported Intel® Architecture(s) | Description
+|:---                                                                                                 |:---                              |:---
+| [dynamic_selection](https://github.com/uxlfoundation/oneDPL/tree/main/examples/dynamic_selection)   | GPU, CPU                         | The nstream and sepia-filter-ds samples demonstrate the dynamic selection feature in oneDPL on five different policies - fixed CPU, fixed GPU, round robin, dyanmic load, and auto-tune.
+| [gamma-correction](https://github.com/uxlfoundation/oneDPL/tree/main/examples/gamma_correction)     | GPU, CPU                         | Learn how the oneDPL parallel STL policy and oneDPL algorithms help to accelerate a gamma correction's nonlinear operations to encode and decode the luminance of each pixel of an image.
+| [histogram](https://github.com/uxlfoundation/oneDPL/tree/main/examples/histogram)                   | GPU, CPU                         | See how to write heterogeneous program to offload to a CPU or GPU using upper_bound and reduce_by_segment API to implement both dense and sparse histograms.
+| [maxloc_reductions](https://github.com/uxlfoundation/oneDPL/tree/main/examples/maxloc_reductions)   | GPU, CPU                         | Code sample shows four ways of finding the location of the maximum value in an array - using the SYCL reduction operator, using oneDPL max_element and distance functions, using oneDPL and SYCL buffers, and using oneDPL and USM.
+| [pSTL_offload](https://github.com/uxlfoundation/oneDPL/tree/main/examples/pSTL_offload)             | GPU, CPU                         | Shows how to offload standard C++ pSTL code to the CPU and GPU in oneDPL by using the -fsycl-pstl-offload compiler option.
+| [stable_sort_by_key](https://github.com/uxlfoundation/oneDPL/tree/main/examples/stable_sort_by_key) | GPU, CPU                         | Use the extended API in oneDPL with the counting and zip iterator extensions to implement a stable sort by key algorithm that can be offloaded to a CPU or GPU.

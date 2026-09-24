@@ -1,0 +1,15 @@
+if(ONECCL_ENABLE_MPI)
+    add_subdirectory(cpu)
+endif()
+
+if(COMPILER_SUPPORTS_SYCL)
+    if(ONECCL_ENABLE_MPI)
+        add_subdirectory(multi)
+        add_subdirectory(sycl)
+        add_subdirectory(split)
+    endif()
+
+    if(NOT WIN32)
+        add_subdirectory(launcher)
+    endif()
+endif()

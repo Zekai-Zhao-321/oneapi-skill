@@ -1,0 +1,99 @@
+.. _DPCT1087:
+
+DPCT1087 [UPDATE]
+=================
+
+Message
+-------
+
+.. _msg-1087-start:
+
+SYCL currently does not support cross group synchronization. You can
+specify ``--use-experimental-features=root-group`` to use the root-group to migrate
+*<synchronization API call>*.
+
+.. _msg-1087-end:
+
+Detailed Help
+-------------
+
+By default, the SYCL root group extension is not used to migrate CUDA\* grid level
+synchronization. To use ``root-group`` to migrate CUDA grid level synchronization,
+specify ``--use-experimental-features=root-group`` in the migration command.
+
+Suggestions to Fix
+------------------
+
+Specify ``--use-experimental-features= root-group`` in the migration command to use
+the root-group to migrate CUDA grid level synchronization.
+
+For example, this original CUDA\* code:
+
+.. code-block:: cpp
+   :linenos:
+
+   __global__ void kernel() {
+     namespace cg = cooperative_groups;
+     cg::grid_group grid = cg::this_grid();
+     grid.sync();
+   }
+   
+   void foo() {
+     kernel<<<1, 64>>>();
+   }
+
+results in the following migrated SYCL code:
+
+.. code-block:: cpp
+   :linenos:
+
+   void kernel() {
+   
+     /*
+     DPCT1119:1: Migration of cooperative_groups::__v1::grid_group::this_grid is not
+     supported, please try to remigrate with option:
+     --use-experimental-features=root-group.
+     */
+     /*
+     DPCT1119:2: Migration of cooperative_groups::__v1::grid_group is not
+     supported, please try to remigrate with option:
+     --use-experimental-features=root-group.
+     */
+     cg::grid_group grid = cg::this_grid();
+     /*
+     DPCT1087:0: SYCL currently does not support cross group synchronization. You
+     can specify "--use-experimental-features=root-group" to use the dpct
+     helper function nd_range_barrier to migrate grid.sync().
+     */
+     grid.sync();
+   }
+   
+   void foo() {
+     dpct::get_in_order_queue().parallel_for(
+         sycl::nd_range<3>(sycl::range<3>(1, 1, 64), sycl::range<3>(1, 1, 64)),
+         [=](sycl::nd_item<3> item_ct1) {
+           kernel();
+         });
+   }
+
+which is rewritten to:
+
+.. code-block:: cpp
+   :linenos:
+
+   void kernel(const sycl::nd_item<3> &item_ct1,
+     sycl::ext::oneapi::experimental::root_group grid =
+         item_ct1.ext_oneapi_get_root_group();
+     sycl::group_barrier(grid);
+   }
+   
+   void foo() {
+     auto exp_props = sycl::ext::oneapi::experimental::properties{
+         sycl::ext::oneapi::experimental::use_root_sync};
+     dpct::get_in_order_queue().parallel_for(
+         sycl::nd_range<3>(sycl::range<3>(1, 1, 64), sycl::range<3>(1, 1, 64)),
+         exp_props, [=](sycl::nd_item<3> item_ct1) {
+           kernel(item_ct1);
+             [=](sycl::nd_item<3> item_ct1) {
+         });
+   }

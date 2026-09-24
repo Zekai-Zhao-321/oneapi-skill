@@ -1,0 +1,219 @@
+#
+# Copyright (C) 2019-2022 Intel Corporation
+#
+# SPDX-License-Identifier: MIT
+#
+# See YaML.md for syntax definition
+#
+--- #--------------------------------------------------------------------------
+type: header
+desc: "Intel $OneApi Level-Zero Tool APIs for System Resource Management (Sysman) - Event management"
+--- #--------------------------------------------------------------------------
+type: enum
+desc: "Event types"
+class: $sDriver
+name: $s_event_type_flags_t
+etors:
+    - name: DEVICE_DETACH
+      desc: "Event is triggered when the device is no longer available (due to a reset or being disabled)."
+    - name: DEVICE_ATTACH
+      desc: "Event is triggered after the device is available again."
+    - name: DEVICE_SLEEP_STATE_ENTER
+      desc: "Event is triggered when the driver is about to put the device into a deep sleep state"
+    - name: DEVICE_SLEEP_STATE_EXIT
+      desc: "Event is triggered when the driver is waking the device up from a deep sleep state"
+    - name: FREQ_THROTTLED
+      desc: "Event is triggered when the frequency starts being throttled"
+    - name: ENERGY_THRESHOLD_CROSSED
+      desc: "Event is triggered when the energy consumption threshold is reached (use $sPowerSetEnergyThreshold() to configure)."
+    - name: TEMP_CRITICAL
+      desc: "Event is triggered when the critical temperature is reached (use $sTemperatureSetConfig() to configure - disabled by default)."
+    - name: TEMP_THRESHOLD1
+      desc: "Event is triggered when the temperature crosses threshold 1 (use $sTemperatureSetConfig() to configure - disabled by default)."
+    - name: TEMP_THRESHOLD2
+      desc: "Event is triggered when the temperature crosses threshold 2 (use $sTemperatureSetConfig() to configure - disabled by default)."
+    - name: MEM_HEALTH
+      desc: "Event is triggered when the health of device memory changes."
+    - name: FABRIC_PORT_HEALTH
+      desc: "Event is triggered when the health of fabric ports change."
+    - name: PCI_LINK_HEALTH
+      desc: "Event is triggered when the health of the PCI link changes."
+    - name: RAS_CORRECTABLE_ERRORS
+      desc: "Event is triggered when accelerator RAS correctable errors cross thresholds (use $sRasSetConfig() to configure - disabled by default)."
+    - name: RAS_UNCORRECTABLE_ERRORS
+      desc: "Event is triggered when accelerator RAS uncorrectable errors cross thresholds (use $sRasSetConfig() to configure - disabled by default)."
+    - name: DEVICE_RESET_REQUIRED
+      desc: "Event is triggered when the device needs to be reset (use $sDeviceGetState() to determine the reasons for the reset)."
+    - name: SURVIVABILITY_MODE_DETECTED
+      desc: "Event is triggered when graphics driver encounter an error condition."
+      version: "1.9"
+    - name: INFO_LOG_CPER_DATA_AVAILABLE_EXT
+      desc: "Event is triggered when the CPER format info log data is available."
+      version: "1.19"
+--- #--------------------------------------------------------------------------
+type: function
+desc: "Specify the list of events to listen to for a given device"
+class: $sDevice
+name: EventRegister
+details:
+    - "The application may call this function from simultaneous threads."
+    - "The implementation of this function should be lock-free."
+params:
+    - type: $s_device_handle_t
+      name: hDevice
+      desc: "[in] The device handle."
+    - type: $s_event_type_flags_t
+      name: events
+      desc: "[in] List of events to listen to."
+--- #--------------------------------------------------------------------------
+type: function
+desc: "Wait for events to be received from a one or more devices."
+class: $sDriver
+decl: static
+name: EventListen
+details:
+    - "The application may call this function from simultaneous threads."
+    - "The implementation of this function should be lock-free."
+params:
+    - type: $x_driver_handle_t
+      name: hDriver
+      desc: "[in] handle of the driver instance"
+    - type: uint32_t
+      name: timeout
+      desc: |
+            [in] if non-zero, then indicates the maximum time (in milliseconds) to yield before returning $X_RESULT_SUCCESS or $X_RESULT_NOT_READY;
+            if zero, then will check status and return immediately;
+            if `UINT32_MAX`, then function will not return until events arrive.
+    - type: uint32_t
+      name: count
+      desc: "[in] Number of device handles in phDevices."
+    - type: "$s_device_handle_t*"
+      name: phDevices
+      desc: "[in][range(0, count)] Device handles to listen to for events. Only devices from the provided driver handle can be specified in this list."
+    - type: uint32_t*
+      name: pNumDeviceEvents
+      desc: "[in,out] Will contain the actual number of devices in phDevices that generated events. If non-zero, check pEvents to determine the devices and events that were received."
+    - type: "$s_event_type_flags_t*"
+      name: pEvents
+      desc: |
+            [in,out] An array that will continue the list of events for each device listened in phDevices.
+            This array must be at least as big as count.
+            For every device handle in phDevices, this will provide the events that occurred for that device at the same position in this array. If no event was received for a given device, the corresponding array entry will be zero.
+returns:
+    - $X_RESULT_ERROR_INSUFFICIENT_PERMISSIONS:
+        - "User does not have permissions to listen to events."
+    - $X_RESULT_ERROR_INVALID_ARGUMENT:
+        - "One or more of the supplied device handles belongs to a different driver."
+--- #--------------------------------------------------------------------------
+type: function
+desc: "Wait for events to be received from a one or more devices."
+version: "1.1"
+class: $sDriver
+decl: static
+name: EventListenEx
+details:
+    - "The application may call this function from simultaneous threads."
+    - "The implementation of this function should be lock-free."
+params:
+    - type: $x_driver_handle_t
+      name: hDriver
+      desc: "[in] handle of the driver instance"
+    - type: uint64_t
+      name: timeout
+      desc: |
+            [in] if non-zero, then indicates the maximum time (in milliseconds) to yield before returning $X_RESULT_SUCCESS or $X_RESULT_NOT_READY;
+            if zero, then will check status and return immediately;
+            if `UINT64_MAX`, then function will not return until events arrive.
+    - type: uint32_t
+      name: count
+      desc: "[in] Number of device handles in phDevices."
+    - type: "$s_device_handle_t*"
+      name: phDevices
+      desc: "[in][range(0, count)] Device handles to listen to for events. Only devices from the provided driver handle can be specified in this list."
+    - type: uint32_t*
+      name: pNumDeviceEvents
+      desc: "[in,out] Will contain the actual number of devices in phDevices that generated events. If non-zero, check pEvents to determine the devices and events that were received."
+    - type: "$s_event_type_flags_t*"
+      name: pEvents
+      desc: |
+            [in,out] An array that will continue the list of events for each device listened in phDevices.
+            This array must be at least as big as count.
+            For every device handle in phDevices, this will provide the events that occurred for that device at the same position in this array. If no event was received for a given device, the corresponding array entry will be zero.
+returns:
+    - $X_RESULT_ERROR_INSUFFICIENT_PERMISSIONS:
+        - "User does not have permissions to listen to events."
+    - $X_RESULT_ERROR_INVALID_ARGUMENT:
+        - "One or more of the supplied device handles belongs to a different driver."
+--- #--------------------------------------------------------------------------
+type: function
+desc: "Specify the list of driver scoped events to listen to for a given driver"
+version: "1.19"
+class: $sDriver
+name: EventRegisterExt
+details:
+    - "This function registers the driver scoped events the application wants to be notified about. Unlike $sDeviceEventRegister the registration is not tied to a device: the underlying event source is shared by all devices of the driver."
+    - "Registered events are reported only by $sDriverEventListenExt, in its `pDriverEvents` argument. As the events are driver scoped they have no device handle to be reported against, so $sDriverEventListen and $sDriverEventListenEx never report them."
+    - "Calling this function while another thread is blocked in a listen call updates that call, so an event registered after a listen has started can still be reported by it."
+    - "The application may call this function from simultaneous threads."
+params:
+    - type: $s_driver_handle_t
+      name: hDriver
+      desc: "[in] handle of the driver instance"
+    - type: $s_event_type_flags_t
+      name: events
+      desc: |
+            [in] List of driver scoped events to listen to.
+            Must be 0 or a combination of the driver scoped $s_event_type_flags_t values.
+returns:
+    - $X_RESULT_ERROR_INSUFFICIENT_PERMISSIONS:
+        - "User does not have permissions to listen to events."
+    - $X_RESULT_ERROR_INVALID_ENUMERATION:
+        - "`events` contains a flag which is not a driver scoped event."
+--- #--------------------------------------------------------------------------
+type: function
+desc: "Wait for device scoped and driver scoped events to be received from one or more devices."
+version: "1.19"
+class: $sDriver
+name: EventListenExt
+details:
+    - "This function extends $sDriverEventListenEx with the ability to report the driver scoped events registered with $sDriverEventRegisterExt."
+    - "The `hDriver`, `timeout`, `count`, `phDevices`, `pNumDeviceEvents` and `pEvents` arguments behave exactly as in $sDriverEventListenEx."
+    - "`pDriverEvents` is optional. When it is `nullptr` this function behaves exactly like $sDriverEventListenEx and no driver scoped event source is listened to."
+    - "When `pDriverEvents` is not `nullptr` it is cleared on entry and, on return, contains the driver scoped events which have been registered and occurred, i.e. 0 or a combination of the driver scoped $s_event_type_flags_t values."
+    - "`*pNumDeviceEvents` accounts for device scoped events only. A driver scoped event which occurs without any device scoped event therefore returns `*pNumDeviceEvents` set to 0 and `*pDriverEvents` set to the events which occurred, so an application must check both values."
+    - "The application should not call this function from simultaneous threads with the same driver handle."
+params:
+    - type: $s_driver_handle_t
+      name: hDriver
+      desc: "[in] handle of the driver instance"
+    - type: uint64_t
+      name: timeout
+      desc: |
+            [in] if non-zero, then indicates the maximum time (in milliseconds) to yield before returning $X_RESULT_SUCCESS or $X_RESULT_NOT_READY;
+            if zero, then will check status and return immediately;
+            if `UINT64_MAX`, then function will not return until events arrive.
+    - type: uint32_t
+      name: count
+      desc: "[in] Number of device handles in phDevices."
+    - type: "$s_device_handle_t*"
+      name: phDevices
+      desc: "[in][range(0, count)] Device handles to listen to for events. Only devices from the provided driver handle can be specified in this list."
+    - type: uint32_t*
+      name: pNumDeviceEvents
+      desc: "[in,out] Will contain the actual number of devices in phDevices that generated device scoped events. If non-zero, check pEvents to determine the devices and events that were received."
+    - type: "$s_event_type_flags_t*"
+      name: pEvents
+      desc: |
+            [in,out] An array that will contain the list of device scoped events for each device listened in phDevices.
+            This array must be at least as big as count.
+            For every device handle in phDevices, this will provide the events that occurred for that device at the same position in this array. If no event was received for a given device, the corresponding array entry will be zero.
+    - type: "$s_event_type_flags_t*"
+      name: pDriverEvents
+      desc: |
+            [in,out][optional] Returns the driver scoped events which occurred, i.e. 0 or a combination of the driver scoped $s_event_type_flags_t values.
+            When `nullptr`, driver scoped events are not listened to.
+returns:
+    - $X_RESULT_ERROR_INSUFFICIENT_PERMISSIONS:
+        - "User does not have permissions to listen to events."
+    - $X_RESULT_ERROR_INVALID_ARGUMENT:
+        - "One or more of the supplied device handles belongs to a different driver."

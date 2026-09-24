@@ -1,0 +1,7 @@
+# Local upstream source checkouts; see index.md for their origins.
+/references/*/
+
+# Local verification and distributable build output.
+__pycache__/
+*.pyc
+/dist/

@@ -1,0 +1,360 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "project": "SYCL-Reference",
+      "url": "https://github.com/KhronosGroup/SYCL_Reference",
+      "commit": "5528bdaacc9b27604534ca66f8edaa06104cfd36",
+      "commit_date": "2026-02-11T09:27:08-06:00",
+      "branch": "main",
+      "docs": [
+        "source"
+      ],
+      "api": [],
+      "examples": [],
+      "extra": [
+        "README.rst"
+      ]
+    },
+    {
+      "project": "oneAPI-spec",
+      "url": "https://github.com/uxlfoundation/oneAPI-spec",
+      "commit": "70993d33d4f180bb7be400b95f15cbc32bc588dc",
+      "commit_date": "2026-09-09T19:22:37-04:00",
+      "branch": "main",
+      "docs": [
+        "source"
+      ],
+      "api": [],
+      "examples": [],
+      "extra": [
+        "README.rst",
+        "roadmap.rst"
+      ]
+    },
+    {
+      "project": "llvm",
+      "url": "https://github.com/intel/llvm",
+      "commit": "dc45357926029cd6a49e9a1c5349c27d689e4536",
+      "commit_date": "2026-09-23T12:33:39-07:00",
+      "branch": "sycl",
+      "docs": [
+        "sycl/doc",
+        "unified-runtime/scripts/core"
+      ],
+      "api": [
+        "unified-runtime/include"
+      ],
+      "examples": [],
+      "extra": [
+        "sycl/README.md",
+        "unified-runtime/README.md",
+        "llvm/LICENSE.TXT",
+        "sycl/LICENSE.TXT",
+        "unified-runtime/LICENSE.TXT"
+      ]
+    },
+    {
+      "project": "level-zero-spec",
+      "url": "https://github.com/oneapi-src/level-zero-spec",
+      "commit": "143853c129b66d337d3823db7f1ec1abd61c6940",
+      "commit_date": "2026-09-16T15:40:32-07:00",
+      "branch": "master",
+      "docs": [
+        "scripts/core",
+        "scripts/sysman",
+        "scripts/tools",
+        "scripts/runtime"
+      ],
+      "api": [],
+      "examples": [],
+      "extra": [
+        "README.md"
+      ]
+    },
+    {
+      "project": "level-zero",
+      "url": "https://github.com/oneapi-src/level-zero",
+      "commit": "934714b278f850d164627eeaaa043eee02785a9e",
+      "commit_date": "2026-09-17T16:29:59-07:00",
+      "branch": "master",
+      "docs": [
+        "doc",
+        "source/layers"
+      ],
+      "api": [
+        "include"
+      ],
+      "examples": [],
+      "extra": [
+        "README.md"
+      ]
+    },
+    {
+      "project": "compute-runtime",
+      "url": "https://github.com/intel/compute-runtime",
+      "commit": "05b847e3d2e72a6d68813a876a29b852db28200d",
+      "commit_date": "2026-09-23T19:01:12+02:00",
+      "branch": "master",
+      "docs": [
+        "documentation",
+        "programmers-guide"
+      ],
+      "api": [],
+      "examples": [],
+      "extra": [
+        "README.md",
+        "ARCHITECTURE.md"
+      ]
+    },
+    {
+      "project": "intel-graphics-compiler",
+      "url": "https://github.com/intel/intel-graphics-compiler",
+      "commit": "f586d8b2df5d747635d9754157f718e81e17e152",
+      "commit_date": "2026-09-23T12:44:34-04:00",
+      "branch": "master",
+      "docs": [
+        "documentation"
+      ],
+      "api": [],
+      "examples": [],
+      "extra": [
+        "README.md"
+      ]
+    },
+    {
+      "project": "unified-memory-framework",
+      "url": "https://github.com/oneapi-src/unified-memory-framework",
+      "commit": "19ce12f5f40213a612828e32a3b1d1b857222312",
+      "commit_date": "2026-09-10T10:11:36+02:00",
+      "branch": "main",
+      "docs": [
+        "docs"
+      ],
+      "api": [
+        "include"
+      ],
+      "examples": [
+        "examples"
+      ],
+      "extra": [
+        "README.md"
+      ]
+    },
+    {
+      "project": "oneTBB",
+      "url": "https://github.com/uxlfoundation/oneTBB",
+      "commit": "8976636cbd8962464cebabf4e097626ceda64809",
+      "commit_date": "2026-09-23T12:40:25+02:00",
+      "branch": "master",
+      "docs": [
+        "doc"
+      ],
+      "api": [],
+      "examples": [
+        "examples/GettingStarted"
+      ],
+      "extra": [
+        "README.md",
+        "VERSIONING.md"
+      ]
+    },
+    {
+      "project": "oneDPL",
+      "url": "https://github.com/uxlfoundation/oneDPL",
+      "commit": "2d68a32569e455cc926cb589edb4cc5902f61f93",
+      "commit_date": "2026-09-23T12:04:05-05:00",
+      "branch": "main",
+      "docs": [
+        "documentation"
+      ],
+      "api": [],
+      "examples": [
+        "examples"
+      ],
+      "extra": [
+        "README.md"
+      ]
+    },
+    {
+      "project": "oneMath",
+      "url": "https://github.com/uxlfoundation/oneMath",
+      "commit": "3273ca2205065817459f61c93b008aa94ae8f513",
+      "commit_date": "2026-09-18T08:15:08-07:00",
+      "branch": "develop",
+      "docs": [
+        "docs"
+      ],
+      "api": [
+        "include/oneapi/math",
+        "include/oneapi/math.hpp"
+      ],
+      "examples": [
+        "examples"
+      ],
+      "extra": [
+        "README.md",
+        "legal_information.md"
+      ]
+    },
+    {
+      "project": "oneDNN",
+      "url": "https://github.com/uxlfoundation/oneDNN",
+      "commit": "7af4aecc7fb5dc2b50edfbb621b76b612ae185c9",
+      "commit_date": "2026-09-23T10:03:29-07:00",
+      "branch": "main",
+      "docs": [
+        "doc"
+      ],
+      "api": [
+        "include/oneapi/dnnl"
+      ],
+      "examples": [
+        "examples"
+      ],
+      "extra": [
+        "README.md"
+      ]
+    },
+    {
+      "project": "oneCCL",
+      "url": "https://github.com/uxlfoundation/oneCCL",
+      "commit": "c5108e797317bf62d2ed830d869f199bed6792e6",
+      "commit_date": "2026-09-17T22:08:45+03:00",
+      "branch": "master-v2",
+      "docs": [
+        "docs"
+      ],
+      "api": [
+        "include"
+      ],
+      "examples": [
+        "examples"
+      ],
+      "extra": [
+        "README.md"
+      ]
+    },
+    {
+      "project": "oneDAL",
+      "url": "https://github.com/uxlfoundation/oneDAL",
+      "commit": "80387026db8c322920638ee5a6e5f7b9ec36ff7a",
+      "commit_date": "2026-09-23T16:42:47-07:00",
+      "branch": "main",
+      "docs": [
+        "docs/source"
+      ],
+      "api": [
+        "cpp/oneapi/dal"
+      ],
+      "examples": [
+        "examples/oneapi"
+      ],
+      "extra": [
+        "README.md",
+        "INSTALL.md"
+      ]
+    },
+    {
+      "project": "scikit-learn-intelex",
+      "url": "https://github.com/uxlfoundation/scikit-learn-intelex",
+      "commit": "a0fc42c38ebd67d361fdeab334edc21120a38166",
+      "commit_date": "2026-09-22T09:51:41-07:00",
+      "branch": "main",
+      "docs": [
+        "doc/sources"
+      ],
+      "api": [],
+      "examples": [
+        "examples/sklearnex"
+      ],
+      "extra": [
+        "README.md"
+      ]
+    },
+    {
+      "project": "cryptography-primitives",
+      "url": "https://github.com/intel/cryptography-primitives",
+      "commit": "817e83b47655f565922fa2f46b16a7d09a46ffcd",
+      "commit_date": "2026-09-22T11:48:35Z",
+      "branch": "develop",
+      "docs": [
+        "doc"
+      ],
+      "api": [
+        "include"
+      ],
+      "examples": [
+        "examples"
+      ],
+      "extra": [
+        "README.md",
+        "OVERVIEW.md",
+        "BUILD.md"
+      ]
+    },
+    {
+      "project": "SYCLomatic",
+      "url": "https://github.com/oneapi-src/SYCLomatic",
+      "commit": "1bf0129453c284110ac35fe59e3f9a38c1e3d110",
+      "commit_date": "2026-09-14T13:27:00-05:00",
+      "branch": "SYCLomatic",
+      "docs": [
+        "docs"
+      ],
+      "api": [],
+      "examples": [],
+      "extra": [
+        "README.md"
+      ]
+    },
+    {
+      "project": "pti-gpu",
+      "url": "https://github.com/intel/pti-gpu",
+      "commit": "8f063593943dc7f97b068a110843a9e1887008de",
+      "commit_date": "2026-09-10T18:29:33-04:00",
+      "branch": "master",
+      "docs": [
+        "chapters",
+        "tools",
+        "sdk/docs"
+      ],
+      "api": [
+        "sdk/include"
+      ],
+      "examples": [
+        "sdk/samples"
+      ],
+      "extra": [
+        "README.md",
+        "sdk/README.md",
+        "sdk/INSTALL.md"
+      ]
+    },
+    {
+      "project": "oneAPI-samples",
+      "url": "https://github.com/oneapi-src/oneAPI-samples",
+      "commit": "9ddf63720937c3f8a638022499394d3522f65f9b",
+      "commit_date": "2026-07-28T07:45:15-05:00",
+      "branch": "main",
+      "docs": [
+        "DirectProgramming",
+        "Libraries",
+        "Tools",
+        "Training",
+        "Templates"
+      ],
+      "api": [],
+      "examples": [
+        "DirectProgramming/C++SYCL/DenseLinearAlgebra/vector-add",
+        "DirectProgramming/C++SYCL/ParallelPatterns",
+        "Libraries/oneDPL",
+        "Libraries/oneMKL",
+        "Tools/Migration"
+      ],
+      "extra": [
+        "README.md"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,746 @@
+# Supported SPIR-V Extensions
+
+This document lists all SPIR-V extensions supported by IGC and their platform requirements.
+
+## SPV_EXT_float8
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/EXT/SPV_EXT_float8.html
+
+> **Experimentally supported on**: XE3P+ (NVL P, CRI)
+
+**Capabilities**:
+
+- **Float8EXT**
+- **Float8CooperativeMatrixEXT**
+
+---
+
+## SPV_EXT_long_vector
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/EXT/SPV_EXT_long_vector.html
+
+> **Experimentally supported on**: All platforms
+
+**Capabilities**:
+
+- **LongVectorEXT**
+
+---
+
+## SPV_EXT_ocp_microscaling_types
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/EXT/SPV_EXT_ocp_microscaling_types.html
+
+> **Experimentally supported on**: XE3P+ (NVL P, CRI)
+
+**Capabilities**:
+
+- **Float4EXT**
+
+---
+
+## SPV_EXT_optnone
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/EXT/SPV_EXT_optnone.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **OptNoneEXT**
+
+---
+
+## SPV_EXT_relaxed_printf_string_address_space
+
+**Specification**: https://github.com/KhronosGroup/SPIRV-Registry/blob/main/extensions/EXT/SPV_EXT_relaxed_printf_string_address_space.asciidoc
+
+> **Experimentally supported on**: All platforms
+
+**Capabilities**:
+
+- No capabilities defined
+
+---
+
+## SPV_EXT_shader_atomic_float16_add
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/EXT/SPV_EXT_shader_atomic_float16_add.html
+
+> **Supported on**: XE3P+ (NVL P, CRI)
+
+**Capabilities**:
+
+- **AtomicFloat16AddEXT**
+
+---
+
+## SPV_EXT_shader_atomic_float_add
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/EXT/SPV_EXT_shader_atomic_float_add.html
+
+**Capabilities**:
+
+- **AtomicFloat32AddEXT**
+  > **Supported On**: All platforms
+- **AtomicFloat64AddEXT**
+  > **Supported On**: XE_HPG+ except DG2 (PVC, METEORLAKE, ARROWLAKE, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+
+---
+
+## SPV_EXT_shader_atomic_float_min_max
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/EXT/SPV_EXT_shader_atomic_float_min_max.html
+
+**Capabilities**:
+
+- **AtomicFloat16MinMaxEXT**
+  > **Supported On**: All platforms
+- **AtomicFloat32MinMaxEXT**
+  > **Supported On**: All platforms
+- **AtomicFloat64MinMaxEXT**
+  > **Supported On**: XE_HPG+ except DG2 (PVC, METEORLAKE, ARROWLAKE, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+
+---
+
+## SPV_INTEL_2d_block_io
+
+**Specification**: https://github.com/KhronosGroup/SPIRV-Registry/blob/main/extensions/INTEL/SPV_INTEL_2d_block_io.asciidoc
+
+> **Supported on**: XE_HPC+ (PVC, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+
+**Capabilities**:
+
+- **Subgroup2DBlockIOINTEL**
+- **Subgroup2DBlockTransformINTEL**
+- **Subgroup2DBlockTransposeINTEL**
+
+---
+
+## SPV_INTEL_16bit_atomics
+
+**Specification**: https://github.com/intel/llvm/pull/20009
+
+**Capabilities**:
+
+- **AtomicInt16CompareExchangeINTEL**
+  > **Supported On**: XE3P+ (NVL P, CRI)
+- **Int16AtomicsINTEL**
+  > **Supported On**: Not supported
+- **AtomicBFloat16LoadStoreINTEL**
+  > **Supported On**: XE3P+ (NVL P, CRI)
+- **AtomicBFloat16AddINTEL**
+  > **Supported On**: XE3P+ (NVL P, CRI)
+- **AtomicBFloat16MinMaxINTEL**
+  > **Supported On**: XE3P+ (NVL P, CRI)
+
+---
+
+## SPV_INTEL_arbitrary_precision_integers
+
+**Specification**: https://github.com/KhronosGroup/SPIRV-Registry/blob/main/extensions/INTEL/SPV_INTEL_arbitrary_precision_integers.html
+
+> **Experimentally supported on**: All platforms
+
+**Capabilities**:
+
+- **ArbitraryPrecisionIntegersINTEL**
+
+---
+
+## SPV_INTEL_bfloat16_arithmetic
+
+**Specification**: https://github.com/intel/llvm/blob/sycl/sycl/doc/design/spirv-extensions/SPV_INTEL_bfloat16_arithmetic.asciidoc
+
+> **Experimentally supported on**: XE_HPG+ except METEORLAKE (DG2, PVC, ARROWLAKE, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+
+**Capabilities**:
+
+- **BFloat16ArithmeticINTEL**
+
+---
+
+## SPV_INTEL_bfloat16_conversion
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_bfloat16_conversion.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **BFloat16ConversionINTEL**
+
+---
+
+## SPV_INTEL_bindless_images
+
+**Specification**: https://github.com/intel/llvm/blob/sycl/sycl/doc/design/spirv-extensions/SPV_INTEL_bindless_images.asciidoc
+
+> **Experimentally supported on**: XE_HPG+ except PVC, CRI (DG2, METEORLAKE, ARROWLAKE, BMG, LUNARLAKE, PTL, NVL S, NVL P)
+
+**Capabilities**:
+
+- **BindlessImagesINTEL**
+
+---
+
+## SPV_INTEL_cache_controls
+
+**Specification**: https://github.com/KhronosGroup/SPIRV-Registry/blob/main/extensions/INTEL/SPV_INTEL_cache_controls.asciidoc
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **CacheControlsINTEL**
+
+---
+
+## SPV_INTEL_debug_module
+
+**Specification**: https://github.com/intel/llvm/blob/sycl/sycl/doc/design/spirv-extensions/SPV_INTEL_debug_module.asciidoc
+
+> **Experimentally supported on**: All platforms
+
+**Capabilities**:
+
+- **DebugInfoModuleINTEL**
+
+---
+
+## SPV_INTEL_device_barrier
+
+**Specification**: https://github.com/intel/llvm/pull/12092
+
+> **Experimentally supported on**: All platforms
+
+**Capabilities**:
+
+- **DeviceBarrierINTEL**
+
+---
+
+## SPV_INTEL_float4
+
+**Specification**: https://github.com/intel/llvm/blob/sycl/sycl/doc/design/spirv-extensions/SPV_INTEL_float4.asciidoc
+
+> **Experimentally supported on**: XE3P+ (NVL P, CRI)
+
+**Capabilities**:
+
+- **Float4TypeINTEL**
+- **Float4CooperativeMatrixINTEL**
+
+---
+
+## SPV_INTEL_fp_conversions
+
+**Specification**: https://github.com/intel/llvm/blob/sycl/sycl/doc/design/spirv-extensions/SPV_INTEL_fp_conversions.asciidoc
+
+> **Experimentally supported on**: XE3P+ (NVL P, CRI)
+
+**Capabilities**:
+
+- **FloatConversionsFtoFINTEL**
+- **FloatConversionsFtoSINTEL**
+
+---
+
+## SPV_INTEL_fp_fast_math_mode
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_fp_fast_math_mode.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **FPFastMathModeINTEL**
+
+---
+
+## SPV_INTEL_fp_max_error
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_fp_max_error.html
+
+> **Experimentally supported on**: All platforms
+
+**Capabilities**:
+
+- **FPMaxErrorINTEL**
+
+---
+
+## SPV_INTEL_function_pointers
+
+**Specification**: https://github.com/intel/llvm/blob/sycl/sycl/doc/design/spirv-extensions/SPV_INTEL_function_pointers.asciidoc
+
+> **Experimentally supported on**: All platforms
+
+**Capabilities**:
+
+- **FunctionPointersINTEL**
+- **IndirectReferencesINTEL**
+
+---
+
+## SPV_INTEL_global_variable_decorations
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_global_variable_host_access.html
+
+> **Experimentally supported on**: All platforms
+
+**Capabilities**:
+
+- No capabilities defined
+
+---
+
+## SPV_INTEL_global_variable_host_access
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_global_variable_host_access.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **GlobalVariableHostAccessINTEL**
+
+---
+
+## SPV_INTEL_inline_assembly
+
+**Specification**: https://github.com/intel/llvm/blob/sycl/sycl/doc/design/spirv-extensions/SPV_INTEL_inline_assembly.asciidoc
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **AsmINTEL**
+
+---
+
+## SPV_INTEL_int4
+
+**Specification**: https://github.com/KhronosGroup/SPIRV-Registry/blob/main/extensions/INTEL/SPV_INTEL_int4.asciidoc
+
+**Capabilities**:
+
+- **Int4TypeINTEL**
+  > **Experimentally supported on**: XE3P+ (NVL P, CRI)
+- **Int4CooperativeMatrixINTEL**
+  > **Experimentally supported on**: Not supported
+
+---
+
+## SPV_INTEL_joint_matrix
+
+**Specification**: https://github.com/intel/llvm/blob/sycl/sycl/doc/design/spirv-extensions/SPV_INTEL_joint_matrix.asciidoc
+
+**Capabilities**:
+
+- **PackedCooperativeMatrixINTEL**
+  > **Experimentally supported on**: XE_HPG+ (DG2, PVC, METEORLAKE, ARROWLAKE, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+- **CooperativeMatrixInvocationInstructionsINTEL**
+  > **Experimentally supported on**: XE_HPG+ (DG2, PVC, METEORLAKE, ARROWLAKE, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+- **CooperativeMatrixTF32ComponentTypeINTEL**
+  > **Experimentally supported on**: XE_HPC+ (PVC, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+- **CooperativeMatrixBFloat16ComponentTypeINTEL**
+  > **Experimentally supported on**: XE_HPG+ (DG2, PVC, METEORLAKE, ARROWLAKE, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+- **CooperativeMatrixPrefetchINTEL**
+  > **Experimentally supported on**: XE_HPC+ (PVC, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+
+---
+
+## SPV_INTEL_kernel_attributes
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_kernel_attributes.html
+
+**Capabilities**:
+
+- **KernelAttributesINTEL**
+  > **Experimentally supported on**: All platforms
+- **FPGAKernelAttributesINTEL**
+  > **Experimentally supported on**: Not supported
+- **FPGAKernelAttributesv2INTEL**
+  > **Experimentally supported on**: Not supported
+
+---
+
+## SPV_INTEL_long_composites
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_long_composites.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **LongCompositesINTEL**
+
+---
+
+## SPV_INTEL_maximum_registers
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_maximum_registers.html
+
+> **Experimentally supported on**: All platforms
+
+**Capabilities**:
+
+- **RegisterLimitsINTEL**
+
+---
+
+## SPV_INTEL_media_block_io
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_media_block_io.html
+
+> **Supported on**: TIGERLAKE_LP, ROCKETLAKE, ALDERLAKE_S, ALDERLAKE_P, ALDERLAKE_N, DG1, XE_HP_SDV, DG2, METEORLAKE, ARROWLAKE
+
+**Capabilities**:
+
+- **SubgroupImageMediaBlockIOINTEL**
+
+---
+
+## SPV_INTEL_memory_access_aliasing
+
+**Specification**: https://github.com/intel/llvm/pull/3426/files
+
+> **Experimentally supported on**: All platforms
+
+**Capabilities**:
+
+- **MemoryAccessAliasingINTEL**
+
+---
+
+## SPV_INTEL_optnone
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_optnone.html
+
+> **Experimentally supported on**: All platforms
+
+**Capabilities**:
+
+- **OptNoneINTEL**
+
+---
+
+## SPV_INTEL_predicated_io
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_predicated_io.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **PredicatedIOINTEL**
+
+---
+
+## SPV_INTEL_rounded_divide_sqrt
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_rounded_divide_sqrt.html
+
+> **Experimentally supported on**: XE_HP+ (XE_HP_SDV, DG2, PVC, METEORLAKE, ARROWLAKE, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+
+**Capabilities**:
+
+- **RoundedDivideSqrtINTEL**
+
+---
+
+## SPV_INTEL_sigmoid
+
+**Specification**: https://github.com/intel/llvm/blob/sycl/sycl/doc/design/spirv-extensions/SPV_INTEL_sigmoid.asciidoc
+
+> **Experimentally supported on**: All platforms
+
+**Capabilities**:
+
+- **SigmoidINTEL**
+
+---
+
+## SPV_INTEL_split_barrier
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_split_barrier.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **SplitBarrierINTEL**
+
+---
+
+## SPV_INTEL_subgroup_buffer_prefetch
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_subgroup_buffer_prefetch.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **SubgroupBufferPrefetchINTEL**
+
+---
+
+## SPV_INTEL_subgroup_matrix_multiply_accumulate
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_subgroup_matrix_multiply_accumulate.html
+
+> **Supported on**: XE_HPG+ except METEORLAKE, ARROWLAKE (DG2, PVC, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+
+**Capabilities**:
+
+- **SubgroupMatrixMultiplyAccumulateINTEL**
+
+---
+
+## SPV_INTEL_subgroup_matrix_multiply_accumulate_float4
+
+**Specification**: https://github.com/intel/llvm/blob/sycl/sycl/doc/design/spirv-extensions/SPV_INTEL_subgroup_matrix_multiply_accumulate_float4.asciidoc
+
+> **Experimentally supported on**: XE3P+ (NVL P, CRI)
+
+**Capabilities**:
+
+- **MatrixAPackedFloat4E2M1INTEL**
+- **MatrixBPackedFloat4E2M1INTEL**
+
+---
+
+## SPV_INTEL_subgroup_matrix_multiply_accumulate_float8
+
+**Specification**: https://github.com/intel/llvm/blob/sycl/sycl/doc/design/spirv-extensions/SPV_INTEL_subgroup_matrix_multiply_accumulate_float8.asciidoc
+
+> **Experimentally supported on**: XE3P+ (NVL P, CRI)
+
+**Capabilities**:
+
+- **MatrixAPackedFloat8E4M3INTEL**
+- **MatrixBPackedFloat8E4M3INTEL**
+- **MatrixAPackedFloat8E5M2INTEL**
+- **MatrixBPackedFloat8E5M2INTEL**
+
+---
+
+## SPV_INTEL_subgroup_scaled_matrix_multiply_accumulate
+
+**Specification**: https://github.com/intel/llvm/blob/sycl/sycl/doc/design/spirv-extensions/SPV_INTEL_subgroup_scaled_matrix_multiply_accumulate.asciidoc
+
+> **Experimentally supported on**: XE3P+ (NVL P, CRI)
+
+**Capabilities**:
+
+- **SubgroupScaledMatrixMultiplyAccumulateINTEL**
+
+---
+
+## SPV_INTEL_subgroups
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_subgroups.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **SubgroupShuffleINTEL**
+- **SubgroupBufferBlockIOINTEL**
+- **SubgroupImageBlockIOINTEL**
+
+---
+
+## SPV_INTEL_tensor_float32_conversion
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_tensor_float32_conversion.html
+
+> **Supported on**: XE_HPC+ (PVC, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+
+**Capabilities**:
+
+- **TensorFloat32RoundingINTEL**
+
+---
+
+## SPV_INTEL_unstructured_loop_controls
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_unstructured_loop_controls.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **UnstructuredLoopControlsINTEL**
+
+---
+
+## SPV_INTEL_variable_length_array
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/INTEL/SPV_INTEL_variable_length_array.html
+
+> **Experimentally supported on**: All platforms
+
+**Capabilities**:
+
+- **VariableLengthArrayINTEL**
+- **UntypedVariableLengthArrayINTEL**
+
+---
+
+## SPV_INTEL_vector_compute
+
+**Specification**: https://github.com/intel/llvm/pull/1612
+
+> **Experimentally supported on**: All platforms
+
+**Capabilities**:
+
+- **VectorComputeINTEL**
+- **VectorAnyINTEL**
+
+---
+
+## SPV_KHR_bfloat16
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/KHR/SPV_KHR_bfloat16.html
+
+**Capabilities**:
+
+- **BFloat16TypeKHR**
+  > **Supported On**: XE3P+ (NVL P, CRI)
+  > **Experimentally supported on**: XE_HPG+ except METEORLAKE (DG2, PVC, ARROWLAKE, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+- **BFloat16DotProductKHR**
+  > **Supported On**: XE3P+ (NVL P, CRI)
+  > **Experimentally supported on**: XE_HPG+ except METEORLAKE (DG2, PVC, ARROWLAKE, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+- **BFloat16CooperativeMatrixKHR**
+  > **Experimentally supported on**: XE_HPG+ except METEORLAKE (DG2, PVC, ARROWLAKE, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+
+---
+
+## SPV_KHR_bit_instructions
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/KHR/SPV_KHR_bit_instructions.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **BitInstructions**
+
+---
+
+## SPV_KHR_cooperative_matrix
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/KHR/SPV_KHR_cooperative_matrix.html
+
+> **Experimentally supported on**: XE_HPG+ (DG2, PVC, METEORLAKE, ARROWLAKE, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+
+**Capabilities**:
+
+- **CooperativeMatrixKHR**
+
+---
+
+## SPV_KHR_expect_assume
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/KHR/SPV_KHR_expect_assume.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **ExpectAssumeKHR**
+
+---
+
+## SPV_KHR_integer_dot_product
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/KHR/SPV_KHR_integer_dot_product.html
+
+**Capabilities**:
+
+- **DotProductKHR**
+  > **Supported On**: All platforms except ALDERLAKE_N (TIGERLAKE_LP, ROCKETLAKE, ALDERLAKE_S, ALDERLAKE_P, DG1, XE_HP_SDV, DG2, PVC, METEORLAKE, ARROWLAKE, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+- **DotProductInputAllKHR**
+  > **Supported On**: Not supported
+- **DotProductInput4x8BitKHR**
+  > **Supported On**: All platforms except ALDERLAKE_N (TIGERLAKE_LP, ROCKETLAKE, ALDERLAKE_S, ALDERLAKE_P, DG1, XE_HP_SDV, DG2, PVC, METEORLAKE, ARROWLAKE, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+- **DotProductInput4x8BitPackedKHR**
+  > **Supported On**: All platforms except ALDERLAKE_N (TIGERLAKE_LP, ROCKETLAKE, ALDERLAKE_S, ALDERLAKE_P, DG1, XE_HP_SDV, DG2, PVC, METEORLAKE, ARROWLAKE, BMG, LUNARLAKE, PTL, NVL S, NVL P, CRI)
+
+---
+
+## SPV_KHR_linkonce_odr
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/KHR/SPV_KHR_linkonce_odr.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **Linkage**
+
+---
+
+## SPV_KHR_no_integer_wrap_decoration
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/KHR/SPV_KHR_no_integer_wrap_decoration.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- No capabilities defined
+
+---
+
+## SPV_KHR_non_semantic_info
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/KHR/SPV_KHR_non_semantic_info.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- No capabilities defined
+
+---
+
+## SPV_KHR_shader_clock
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/KHR/SPV_KHR_shader_clock.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **ShaderClockKHR**
+
+---
+
+## SPV_KHR_subgroup_rotate
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/KHR/SPV_KHR_subgroup_rotate.html
+
+> **Supported on**: All platforms
+
+**Capabilities**:
+
+- **GroupNonUniformRotateKHR**
+
+---
+
+## SPV_KHR_uniform_group_instructions
+
+**Specification**: https://github.khronos.org/SPIRV-Registry/extensions/KHR/SPV_KHR_uniform_group_instructions.html
+
+> **Experimentally supported on**: All platforms
+
+**Capabilities**:
+
+- **GroupUniformArithmeticKHR**
+
+---
+

@@ -1,0 +1,18 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: SYCL Reference
+Upstream-Contact: Robert Cohn <Robert.S.Cohn@intel.com>
+Source:
+
+# Sample paragraph, commented out:
+#
+# Files: src/*
+# Copyright: $YEAR $NAME <$CONTACT>
+# License: ...
+
+Files: source/_static/Khronos_Group_SYCL_logo.* source/_static/favicon.png
+Copyright: 2024 The Khronos Group Inc.
+License: CC-BY-4.0
+
+Files: ubuntu-packages.txt reference/headers/*
+Copyright: 2024 The Khronos Group Inc.
+License: Apache-2.0
